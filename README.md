@@ -8,13 +8,18 @@ vi main.go
 :%s/IP_ADDRESS/XXX.XXX.XXX.XXX/g
 ```
 
-### Build the source
+### Grab the code and build the source
 ```
+cd $SRC
+git clone git@github.com:sbadakhc/gorpc.git
+cd goroc
 GOOS=linux go build -o ./gorpc .
 ```
 
 ### Execute the binary
 The client will attempt to connect to your endpoint and report back.
 ```
-./gorpc
+./gorpc 
+f_string:"Connection Successful" 
+
 ```
