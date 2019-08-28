@@ -14,7 +14,7 @@ import (
 
 func main() {
 	// dial
-	conn, _ := grpc.Dial("35.189.109.52:9000", grpc.WithInsecure())
+	conn, _ := grpc.Dial("IP_ADDESS:9000", grpc.WithInsecure())
 	//conn, _ := grpc.Dial("grpcb.in:9001", grpc.WithTransportCredentials(credentials.NewTLS(&tls.Config{ServerName: "", InsecureSkipVerify: true})))
 	defer conn.Close()
 
@@ -24,8 +24,7 @@ func main() {
 
 	// call DummyUnary
 	res, err := client.DummyUnary(ctx, &new.DummyMessage{
-		FString: "hello",
-		FInt32:  42,
+		FString: "Connection Successful",
 	})
 	if err != nil {
 		log.Fatalf("failed to call DummyUnary: %v", err)
